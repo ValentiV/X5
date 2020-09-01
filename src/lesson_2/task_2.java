@@ -16,7 +16,7 @@ public class task_2 {
                     sum += (i%10);
                     i/=10;
             }
-            System.out.println("Last digit of the number: " + sum);
+            System.out.println("The sum of the digits: " + sum);
         }
         else System.out.println("Entered is not an integer!");
     }
