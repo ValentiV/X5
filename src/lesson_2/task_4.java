@@ -2,7 +2,7 @@ package lesson_2;
 import java.util.Scanner;
 
 public class task_4 {
-    public static void main(String[] args) {
+    public static void main(String[] args) { // Определяем знак числа. Если +, выводим число +1, если -, выводим число - 2, если 0, заменяем на 10
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter an integer: ");
         if (scanner.hasNextInt()) {

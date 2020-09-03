@@ -3,7 +3,7 @@ package lesson_2;
 import java.util.Arrays;
 
 public class task_10 {
-    public static void main(String[] args) {
+    public static void main(String[] args) { // Перемещаем нули в конец массива
         int[] array = {15, 10, 0, -6, -5, 3, 0, -34, 0, 32, 56, 0, 24, -52};
 
         int i = 0;

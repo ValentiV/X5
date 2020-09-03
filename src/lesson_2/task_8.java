@@ -1,7 +1,7 @@
 package lesson_2;
 
 public class task_8 {
-    public static void main(String[] args) {
+    public static void main(String[] args) { // Анализируем массив
         int[] array = {1, -10, 5, 6, 45, 23, -45, -34, 0, 32, 56, -1, 2, -2};
         int max = max(array);
         int sum1 = sum1(array);
