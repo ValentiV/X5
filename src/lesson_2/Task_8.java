@@ -1,6 +1,6 @@
 package lesson_2;
 
-public class task_8 {
+public class Task_8 {
     public static void main(String[] args) { // Анализируем массив
         int[] array = {1, -10, 5, 6, 45, 23, -45, -34, 0, 32, 56, -1, 2, -2};
         int max = max(array);
@@ -28,7 +28,9 @@ public class task_8 {
         int sum = 0;
 
         for (int j : array) {
-            if (j > 0) sum += j;
+            if (j > 0) {
+                sum += j;
+            }
         }
         return sum;
     }
@@ -37,7 +39,9 @@ public class task_8 {
         int sum = 0;
 
         for (int j : array) {
-            if (j < 0 && j % 2 == 0) sum += j;
+            if (j < 0 && j % 2 == 0) {
+                sum += j;
+            }
         }
         return sum;
     }
@@ -46,7 +50,9 @@ public class task_8 {
         int count = 0;
 
         for (int j : array) {
-            if (j % 2 == 0) count ++;
+            if (j % 2 == 0) {
+                count++;
+            }
         }
         return count;
     }
@@ -57,9 +63,9 @@ public class task_8 {
         float count = 0;
 
         for (int j : array) {
-            if (j < 0){
+            if (j < 0) {
                 sum += j;
-                count ++;
+                count++;
             }
         }
         average = sum / count;
