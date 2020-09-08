@@ -31,7 +31,7 @@ public class Phone {
     }
 
     //Конструктор без параметров
-    public Phone() { //Конструктор без параметров
+    public Phone() {
     }
 
     //Метод выводит имя и номер звонящего
@@ -42,11 +42,10 @@ public class Phone {
     }
 
     //Метод выводит номер телефона для отправки сообщения
-    public static void  sendMessage(String... num) {
+    public static void sendMessage(String... num) {
         System.out.println("Сообщение отправлено на номера:");
         for (String s : num) {
             System.out.println(s);
         }
     }
-
 }

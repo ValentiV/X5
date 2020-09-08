@@ -26,5 +26,4 @@ public class Main {
 
         Phone.sendMessage(phone1Number, phone2Number, phone3Number);
     }
-
 }
