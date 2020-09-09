@@ -1,10 +1,5 @@
 package lesson_3.task_3;
 
-import lesson_3.task_2.Animal;
-import lesson_3.task_2.Cat;
-import lesson_3.task_2.Dog;
-import lesson_3.task_2.Horse;
-
 public class Main {
     public static void main(String[] args) {
 
@@ -17,9 +12,9 @@ public class Main {
         students[3] = new Aspirant("Gils", "Andrew ", "13D", 2.5, "Non");
         students[4] = new Aspirant("London", "Jack ", "1B", 5, "WHITE FANG");
 
+
         for (Student student : students) {
-            int scholarship = student.getScholarship();
-            System.out.println("Стипендия студента: " + scholarship);
+            System.out.println("Стипендия студента " + student.firstName + ": " + student.getScholarship());
         }
 
     }

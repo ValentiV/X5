@@ -21,10 +21,12 @@ public class Dog extends Animal {
         this.heightAtWithers = heightAtWithers;
     }
 
+    @Override
     public void makeNoise() {
         System.out.println("Собака рычит!\n");
     }
 
+    @Override
     public void eat() {
         System.out.println("Собака грызет кость!\n");
     }

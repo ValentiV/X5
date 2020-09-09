@@ -36,9 +36,7 @@ public class Phone {
 
     //Метод выводит имя и номер звонящего
     public void receiveCall(String number, String name) {
-        this.name = name;
-        this.number = number;
-        System.out.printf("Звонит %s. Номер %s.\n", name, number);
+        System.out.printf("Звонит %s. Номер %s.\n", this.name, this.number);
     }
 
     //Метод выводит номер телефона для отправки сообщения

@@ -21,10 +21,12 @@ public class Cat extends Animal {
         this.lengOfTail = lengOfTail;
     }
 
+    @Override
     public void makeNoise() {
         System.out.println("Кот мурчит!\n");
     }
 
+    @Override
     public void eat() {
         System.out.println("Кот лакает молоко!\n");
     }
