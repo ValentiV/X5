@@ -10,7 +10,7 @@ public class Triangle implements Shape {
     }
 
     @Override
-    public double suqare() {
+    public double square() {
         return height*footing/2;
     }
 }

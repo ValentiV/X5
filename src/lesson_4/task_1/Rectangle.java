@@ -10,7 +10,7 @@ public class Rectangle implements Shape {
     }
 
     @Override
-    public double suqare() {
+    public double square() {
         return a*b;
     }
 }

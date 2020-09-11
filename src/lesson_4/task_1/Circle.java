@@ -10,7 +10,7 @@ public class Circle implements Shape {
     }
 
     @Override
-    public double suqare() {
+    public double square() {
         return Math.PI * (radius * radius);
     }
 }
