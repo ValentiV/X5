@@ -7,7 +7,7 @@ public class Main {
         shape[1] = new Circle(3.3);
         shape[2] = new Rectangle(2, 4);
 
-        for (Shape sh: shape){
+        for (Shape sh : shape) {
             System.out.printf("Площадь фигуры: %s \n", sh.square());
         }
     }

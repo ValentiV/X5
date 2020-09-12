@@ -9,8 +9,9 @@ public class Triangle implements Shape {
         this.footing = footing;
     }
 
+    // Вычисляем площадь треугольника
     @Override
     public double square() {
-        return height*footing/2;
+        return height * footing / 2;
     }
 }

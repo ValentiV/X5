@@ -9,6 +9,7 @@ public class Circle implements Shape {
         this.radius = radius;
     }
 
+    // Вычисляем площадь круга
     @Override
     public double square() {
         return Math.PI * (radius * radius);

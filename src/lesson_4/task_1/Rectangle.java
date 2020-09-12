@@ -9,8 +9,9 @@ public class Rectangle implements Shape {
         this.b = b;
     }
 
+    // Вычисляем площадь квадрата
     @Override
     public double square() {
-        return a*b;
+        return a * b;
     }
 }
