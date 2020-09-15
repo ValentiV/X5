@@ -1,7 +1,7 @@
 package lesson_4.task_2;
 
 public class Lorry extends Car {
-    double carryingCapacity;
+    private double carryingCapacity;
 
     public Lorry(String mark, String carClass, Double weight, Engine engine, double carryingCapacity) {
         super(mark, carClass, weight, engine);

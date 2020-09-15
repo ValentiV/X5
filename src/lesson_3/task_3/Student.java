@@ -2,8 +2,8 @@ package lesson_3.task_3;
 
 public class Student {
 
-    String firstName, lastName, group;
-    double averageMark;
+    public String firstName, lastName, group;
+    public double averageMark;
 
     public Student() {
     }
@@ -50,8 +50,6 @@ public class Student {
     }
 
     public int getScholarship() {
-        double averageMark;
-        averageMark = getAverageMark();
         if (averageMark == 5) {
             return 100;
         }

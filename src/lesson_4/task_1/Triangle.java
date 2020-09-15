@@ -1,8 +1,8 @@
 package lesson_4.task_1;
 
 public class Triangle implements Shape {
-    double height;
-    double footing;
+    private double height;
+    private double footing;
 
     public Triangle(double height, double footing) {
         this.height = height;

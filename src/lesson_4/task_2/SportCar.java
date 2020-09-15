@@ -1,7 +1,7 @@
 package lesson_4.task_2;
 
 public class SportCar extends Car {
-    double topSpeed;
+    private double topSpeed;
 
     public SportCar(String mark, String carClass, Double weight, Engine engine, double topSpeed) {
         super(mark, carClass, weight, engine);
