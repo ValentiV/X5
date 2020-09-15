@@ -1,8 +1,8 @@
 package lesson_4.task_2;
 
 public class Engine {
-    double power;
-    String manufacture;
+    private double power;
+    private String manufacture;
 
     public Engine(double power, String manufacture) {
         this.power = power;

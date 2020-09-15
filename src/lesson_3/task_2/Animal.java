@@ -1,8 +1,8 @@
 package lesson_3.task_2;
 
 public abstract class Animal {
-    String food;
-    String location;
+    private String location;
+    private String food;
 
     public Animal(String food, String location) {
         this.food = food;

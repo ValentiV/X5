@@ -18,8 +18,6 @@ public class Aspirant extends Student {
 
     @Override
     public int getScholarship() {
-        double averageMark;
-        averageMark = getAverageMark();
         if (averageMark == 5) {
             return 200;
         }

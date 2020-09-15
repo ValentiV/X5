@@ -1,9 +1,7 @@
 package lesson_4.task_1;
 
-import java.lang.Math;
-
 public class Circle implements Shape {
-    double radius;
+    private double radius;
 
     public Circle(double radius) {
         this.radius = radius;

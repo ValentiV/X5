@@ -1,9 +1,9 @@
 package lesson_5.task_1;
 
 public class Calc {
-    double num1;
-    double num2;
-    char operator;
+    public double num1;
+    public double num2;
+    public char operator;
 
     LogFactory logFactory1 = new ConsoleFactory();
     LogFactory logFactory2 = new FileFactory();

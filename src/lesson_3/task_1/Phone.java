@@ -2,10 +2,10 @@ package lesson_3.task_1;
 
 public class Phone {
 
-    String number;
-    String model;
-    int weight;
-    String name;
+    public String number;
+    public String model;
+    public int weight;
+    private String name;
 
     //Конструктор с 3 параметрами
     public Phone(String number, String model, int weight) {

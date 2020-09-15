@@ -1,7 +1,7 @@
 package lesson_5.task_1;
 
 public abstract class LogFactory {
-    String message;
+    private String message;
 
     public void logType(String message) {
         Logger logger = creatorLog();
