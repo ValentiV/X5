@@ -1,8 +1,8 @@
 package lesson_5.task_2;
 
 public class Disk {
-    String manufacturer;
-    int memoryCapacity;
-    String type;
-    float formFactor;
+    public String manufacturer;
+    public int memoryCapacity;
+    public String type;
+    public float formFactor;
 }
