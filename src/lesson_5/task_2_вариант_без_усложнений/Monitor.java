@@ -7,7 +7,7 @@ public class Monitor {
         this.diagonal = diagonal;
     }
 
-    public void addMonitor(){
+    public void addMonitor() {
         System.out.println("Диагональ монитора: " + diagonal + "\n");
     }
 }
