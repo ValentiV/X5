@@ -4,6 +4,6 @@ public class IntelCPU implements CPU {
 
     @Override
     public void setResult() {
-        System.out.println("Процессор Intel");
+        System.out.println("Процессор Intel.");
     }
 }

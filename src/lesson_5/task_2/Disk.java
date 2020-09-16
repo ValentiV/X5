@@ -5,4 +5,8 @@ public class Disk {
     public int memoryCapacity;
     public String type;
     public float formFactor;
+
+    public void test(){
+        System.out.println("z d lbcrt");
+    }
 }
