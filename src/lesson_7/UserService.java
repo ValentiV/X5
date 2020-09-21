@@ -8,7 +8,7 @@ public class UserService implements AccountService {
 
     @Override
     public void balance(int accountId) throws Throwable {
-
+        System.out.println("test" + accountId);
     }
 
     @Override

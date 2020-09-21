@@ -1,12 +1,56 @@
 package lesson_7;
 
 import java.io.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
 
+        createFile();
+
+        Scanner sc = new Scanner(new File("C:\\X5\\lesson_7.txt"));
+        List<String> lines = new ArrayList<>();
+        while (sc.hasNextLine()) {
+            lines.add(sc.nextLine());
+        }
+        String[] arr = lines.toArray(new String[0]);
+        System.out.println(Arrays.toString(arr));
+
+       /* System.out.println("Укажите операцию:");
+        Scanner scanner = new Scanner(System.in);
+        String operation;
+        int id;
+        if (scanner.hasNext()) {
+            operation = scanner.next();
+            switch (operation) {
+                case "withdraw":
+                    System.out.println("Укажите id счета");
+                    id = scanner.nextInt();
+                    withdraw(id);
+                    break;
+                case "balance":
+                    System.out.println("Укажите id счета");
+                    id = scanner.nextInt();
+
+                    break;
+                case 491:
+                    System.out.println("Краснодар. Стоимость разговора " + 2.69 * min);
+                    break;
+                case 800:
+                    System.out.println("Киров. Стоимость разговора " + 5 * min);
+                    break;
+                default:
+                    System.out.println("Город не обслуживается!");
+                    break;
+            }
+        } else System.out.println("Введен не код!");
+    }*/
+    }
+    public static void createFile() {
         File file = new File("C:\\X5\\lesson_7.txt");
         if (file.exists() && !file.isDirectory()) {
             System.out.println("Хранилище заполнено!");
@@ -38,34 +82,5 @@ public class Main {
                 System.out.println(e.getMessage());
             }
         }
-        System.out.println("Укажите операцию:");
-        Scanner scanner = new Scanner(System.in);
-        String operation;
-        int id;
-        if (scanner.hasNext()) {
-            operation = scanner.next();
-            switch (operation) {
-                case "withdraw":
-                    System.out.println("Укажите id счета");
-                    id = scanner.nextInt();
-                    withdraw(id);
-                    break;
-                case "balance":
-                    System.out.println("Укажите id счета");
-                    id = scanner.nextInt();
-
-                    break;
-                case 491:
-                    System.out.println("Краснодар. Стоимость разговора " + 2.69 * min);
-                    break;
-                case 800:
-                    System.out.println("Киров. Стоимость разговора " + 5 * min);
-                    break;
-                default:
-                    System.out.println("Город не обслуживается!");
-                    break;
-            }
-        } else System.out.println("Введен не код!");
-    }
     }
 }
