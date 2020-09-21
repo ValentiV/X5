@@ -1,6 +1,6 @@
 package lesson_7;
 
-public interface AccountService {
+/*public interface AccountService {
     <NotEnoughMoneyException extends Throwable, UnknownAccountException extends Throwable>
     void withdraw(int accountId, int amount) throws NotEnoughMoneyException, UnknownAccountException;
 
@@ -9,4 +9,4 @@ public interface AccountService {
     void deposit(int accountId, int amount) throws NotEnoughMoneyException, UnknownAccountException;
 
     void transfer(int from, int to, int amount) throws NotEnoughMoneyException, UnknownAccountException;
-}
+}*/
