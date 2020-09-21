@@ -8,7 +8,6 @@ public class MyLinkedList<E> implements MyCollection<E> {
         public E item;
         public Node next;
 
-
         public Node(E item) {
             this.item = item;
             this.next = null;
@@ -18,45 +17,46 @@ public class MyLinkedList<E> implements MyCollection<E> {
     public int size = 0;
     private Node head = null;
 
-
     @Override
     public int size() {
         return size;
     }
 
-    public boolean add(E item) {
+    @Override
+    public void add(E item) {
         if (head == null) {
             head = new Node(item);
         } else {
             Node node = head;
-            // loop until the last node
             for (; node.next != null; node = node.next) {
             }
             node.next = new Node(item);
         }
         size++;
-        return true;
     }
 
+    @Deprecated
     public void clear() {
         head = null;
         size = 0;
     }
 
+    //Возвращаем массив
     public E[] toArray() {
-        Object[] array = new Object[size];
+        @SuppressWarnings("unchecked")
+        E[] array = (E[]) new Object[size];
         int i = 0;
         for (Node node = head; node != null; node = node.next) {
             array[i] = node.item;
             i++;
         }
-        return (E[]) array;
+        return array;
     }
 
     @Override
     public E get(int index) {
         Node node = getNode(index);
-        return (E) node.item;
+        return node.item;
     }
 
     private Node getNode(int index) {
@@ -70,17 +70,17 @@ public class MyLinkedList<E> implements MyCollection<E> {
         return node;
     }
 
-    public boolean remove(Object obj) {
+    @Override
+    public void remove(Object obj) {
         int index = indexOf(obj);
         if (index == -1) {
-            return false;
+            return;
         }
         remove(index);
-        return true;
     }
 
-    public E remove(int index) {
-        E element = get(index);
+    @Override
+    public void remove(int index) {
         if (index == 0) {
             head = head.next;
         } else {
@@ -88,9 +88,9 @@ public class MyLinkedList<E> implements MyCollection<E> {
             node.next = node.next.next;
         }
         size--;
-        return element;
     }
 
+    //Получаем индекс элемента
     public int indexOf(Object target) {
         Node node = head;
         for (int i = 0; i < size; i++) {

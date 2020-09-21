@@ -5,7 +5,8 @@ import java.util.Objects;
 
 public class MyArrayList<E> implements MyCollection<E> {
 
-    public int size = 0;
+    private int size = 0;
+    @SuppressWarnings("unchecked")
     private E[] array = (E[]) new Object[10];
 
     @Override
@@ -13,12 +14,14 @@ public class MyArrayList<E> implements MyCollection<E> {
         return size;
     }
 
+    //Возвращаем массив
     public E[] toArray() {
-        return (E[]) Arrays.copyOf(array, size);
+        return Arrays.copyOf(array, size);
     }
 
     @Override
-    public boolean add(E item) {
+    @SuppressWarnings("unchecked")
+    public void add(E item) {
         if (size == array.length) {
             Object[] arr = new Object[array.length + 1];
             System.arraycopy(array, 0, arr, 0, array.length);
@@ -26,11 +29,10 @@ public class MyArrayList<E> implements MyCollection<E> {
         }
         array[size] = item;
         size++;
-        return false;
     }
 
     @Override
-    public E remove(int index) {
+    public void remove(int index) {
         checkIndexRange(index);
         int newSize = size - 1;
         if (newSize > index) {
@@ -38,16 +40,14 @@ public class MyArrayList<E> implements MyCollection<E> {
         }
         array[newSize] = null;
         size = newSize;
-        return null;
     }
 
     @Override
-    public boolean remove(E item) {
+    public void remove(E item) {
         int index = lastIndexOf(item);
         if (index >= 0) {
             remove(index);
         }
-        return false;
     }
 
     @Override
@@ -66,14 +66,15 @@ public class MyArrayList<E> implements MyCollection<E> {
         size = 0;
     }
 
+    //Проверяем, есть ли индекс в массиве
     private void checkIndexRange(int index) {
         if ((index) < 0 || (index >= size)) {
             throw new IndexOutOfBoundsException(index);
         }
     }
 
+    //Получаем индекс элемента
     public int lastIndexOf(E item) {
-        // see notes on indexOf
         for (int i = size - 1; i >= 0; i--) {
             if (Objects.equals(item, array[i])) {
                 return i;
