@@ -1,0 +1,8 @@
+package lesson_7.test;
+
+public class UnknownAccountException extends Exception {
+
+    public UnknownAccountException(String message) {
+        super(message);
+    }
+}
