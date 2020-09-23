@@ -83,11 +83,9 @@ public class UserService implements AccountService {
             for (Account account : accounts) {
                 if (account.getId() == accountId) {
                     account.setAmount(account.getAmount() - amount);
-                    int currentAmount = account.getAmount();
-                    System.out.println("Текущий баланс: " + account.getHolder() + " :" + currentAmount);
-                    int newAmount = currentAmount - amount;
-                    account.setAmount(newAmount);
-                    System.out.println("Обновленный баланс: " + account.getHolder() + " :" + newAmount);
+                    System.out.println("Текущий баланс: " + account.getHolder() + " :" + account.getAmount());
+                    account.setAmount(account.getAmount() - amount);
+                    System.out.println("Обновленный баланс: " + account.getHolder() + " :" + account.getAmount());
                 }
             }
         }
@@ -104,11 +102,9 @@ public class UserService implements AccountService {
         } else {
             for (Account account : accounts) {
                 if (account.getId() == accountId) {
-                    int currentAmount = account.getAmount();
-                    System.out.println("Текущий баланс: " + account.getHolder() + " :" + currentAmount);
-                    int newAmount = currentAmount + amount;
-                    account.setAmount(newAmount);
-                    System.out.println("Обновленный баланс: " + account.getHolder() + " :" + newAmount);
+                    System.out.println("Текущий баланс: " + account.getHolder() + " :" + account.getAmount());
+                    account.setAmount(account.getAmount() + amount);
+                    System.out.println("Обновленный баланс: " + account.getHolder() + " :" + account.getAmount());
                 }
             }
         }

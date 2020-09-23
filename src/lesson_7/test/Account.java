@@ -3,7 +3,7 @@ package lesson_7.test;
 public class Account {
     private final int id;
     private final String holder;
-    private final int amount;
+    private int amount;
 
     public Account(int id, String holder, int amount) {
         this.id = id;
@@ -30,7 +30,7 @@ public class Account {
         return amount;
     }
 
-    public int setAmount(int amount) {
-        return 0;
+    public void setAmount(int amount) {
+        this.amount = amount;
     }
 }
