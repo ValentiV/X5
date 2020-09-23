@@ -1,4 +1,4 @@
-package lesson_7.test;
+package lesson_7;
 
 import java.io.*;
 import java.util.ArrayList;

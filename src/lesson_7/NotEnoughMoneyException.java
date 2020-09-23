@@ -1,4 +1,4 @@
-package lesson_7.test;
+package lesson_7;
 
 public class NotEnoughMoneyException extends Exception {
 
