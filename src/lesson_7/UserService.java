@@ -31,10 +31,12 @@ public class UserService implements AccountService {
             }
         }
     }
-/*
-    public ArrayList<Account> getAccount() {
-        return this.accounts;
-    }*/
+
+    public void listAccounts() {
+        for (Account account : this.accounts) {
+            account.listAccounts();
+        }
+    }
 
     //Проверяем существование id счета
     public boolean checkAccountId(int accountId) {
@@ -76,52 +78,46 @@ public class UserService implements AccountService {
             if (checkAccountId(accountId)) {
                 throw new UnknownAccountException("Номер счета не найден!");
             } else {
-
-                throw new NotEnoughMoneyException("Не достаточно средств на счете!");
+                throw new NotEnoughMoneyException("Недостаточно средств на счете!");
             }
         } else {
             for (Account account : accounts) {
                 if (account.getId() == accountId) {
+                    System.out.println("Текущий баланс клиента " + account.getHolder() + " :" + account.getAmount());
                     account.setAmount(account.getAmount() - amount);
-                    System.out.println("Текущий баланс: " + account.getHolder() + " :" + account.getAmount());
-                    account.setAmount(account.getAmount() - amount);
-                    System.out.println("Обновленный баланс: " + account.getHolder() + " :" + account.getAmount());
+                    System.out.println("Обновленный баланс клиента " + account.getHolder() + " :" + account.getAmount());
                 }
             }
         }
     }
 
     @Override
-    public void deposit(int accountId, int amount) throws NotEnoughMoneyException, UnknownAccountException {
-        if (checkAccountId(accountId) || amount <= 0) {
-            if (checkAccountId(accountId)) {
-                throw new UnknownAccountException("Номер счета не найден!");
-            } else {
-                throw new NotEnoughMoneyException("Сумма пополнения должна быть больше 0!");
-            }
+    public void deposit(int accountId, int amount) throws UnknownAccountException {
+        if (checkAccountId(accountId)) {
+            throw new UnknownAccountException("Номер счета не найден!");
         } else {
             for (Account account : accounts) {
                 if (account.getId() == accountId) {
-                    System.out.println("Текущий баланс: " + account.getHolder() + " :" + account.getAmount());
+                    System.out.println("Текущий баланс клиента " + account.getHolder() + " :" + account.getAmount());
                     account.setAmount(account.getAmount() + amount);
-                    System.out.println("Обновленный баланс: " + account.getHolder() + " :" + account.getAmount());
+                    System.out.println("Обновленный баланс клиента " + account.getHolder() + " :" + account.getAmount());
                 }
             }
         }
     }
 
     @Override
-    public void transfer(int from, int to, int amount) throws Throwable {
-        withdraw(from, amount);
-        deposit(to, amount);
+    public void transfer(int fromId, int toId, int amount) throws Throwable {
+        withdraw(fromId, amount);
+        deposit(toId, amount);
     }
 
+    //Выбираем операцию
     public void chooseOperation() throws Throwable {
         int accountId, amount;
         Scanner reader = new Scanner(System.in);
         System.out.println("Укажите операцию:");
         String operation = reader.nextLine();
-
         switch (operation) {
             case "balance" -> {
                 System.out.println("Укажите номер счета:");
@@ -133,6 +129,9 @@ public class UserService implements AccountService {
                 accountId = reader.nextInt();
                 System.out.println("Укажите сумму для снятия:");
                 amount = reader.nextInt();
+                if (amount <= 0) {
+                    throw new NotEnoughMoneyException("Сумма должна быть больше 0!");
+                }
                 withdraw(accountId, amount);
             }
             case "deposit" -> {
@@ -140,6 +139,9 @@ public class UserService implements AccountService {
                 accountId = reader.nextInt();
                 System.out.println("Укажите сумму для пополнения:");
                 amount = reader.nextInt();
+                if (amount <= 0) {
+                    throw new NotEnoughMoneyException("Сумма должна быть больше 0!");
+                }
                 deposit(accountId, amount);
             }
             case "transfer" -> {
@@ -147,8 +149,14 @@ public class UserService implements AccountService {
                 int accountIdFrom = reader.nextInt();
                 System.out.println("Укажите номер счета получателя:");
                 int accountIdTo = reader.nextInt();
+                if (accountIdFrom == accountIdTo) {
+                    throw new UnknownAccountException("Счет отправителя и счет получателя должны отличаться!");
+                }
                 System.out.println("Укажите сумму перевода:");
                 amount = reader.nextInt();
+                if (amount <= 0) {
+                    throw new NotEnoughMoneyException("Сумма перевода должна быть больше 0!");
+                }
                 transfer(accountIdFrom, accountIdTo, amount);
             }
             default -> System.out.println("Операция не поддерживается!");

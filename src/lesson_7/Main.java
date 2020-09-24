@@ -6,6 +6,7 @@ public class Main {
 
         String file = "lesson_7.txt";
         UserService accountService = new UserService(file);
+        accountService.listAccounts();
         try {
             accountService.chooseOperation();
         } catch (UnknownAccountException | NotEnoughMoneyException ex) {
