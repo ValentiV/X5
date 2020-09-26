@@ -108,8 +108,12 @@ public class UserService implements AccountService {
 
     @Override
     public void transfer(int fromId, int toId, int amount) throws Throwable {
-        withdraw(fromId, amount);
-        deposit(toId, amount);
+        if (checkAccountId(toId) || checkAccountId(fromId)) {
+            throw new UnknownAccountException("Номер счета отправителя и/или получателя не найден!");
+        } else {
+            withdraw(fromId, amount);
+            deposit(toId, amount);
+        }
     }
 
     //Выбираем операцию
